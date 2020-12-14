@@ -6,7 +6,6 @@
 
 
 #login-page{
-    background-image: url(./images/Online-shop_button.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +15,7 @@
     text-align: center;
  }
 
- main{
+ main.container{
     position: relative;
     height: 100vh;
     }
@@ -28,7 +27,9 @@
  }
 
  form{
-     width: 100%;
+     /* background-color: blue; */
+    margin: auto;
+     width: 30%;
      margin-bottom: 0;
      min-height: 20rem;
      display: flex;
@@ -40,7 +41,6 @@
 
 .login{
     margin: 1rem 0;
-    width: 100%;
     width: 100%;
 }
 
@@ -60,9 +60,13 @@ input{
 }
 
 #log-in{
+    /* background-color: blue; */
     margin-bottom: 2rem;
 }
 .log-in > button{
+    display: flex;
+    margin: auto;
+    width: 30%;
     outline: none;
 }
 
@@ -98,7 +102,7 @@ input{
     margin-right: 10rem;
 }
 
- footer{
+ #footer{
      /* background-color: blue; */
      height: 3rem;
      padding: 1.5rem;
@@ -127,3 +131,26 @@ input{
 }
 
 /* END OF CREATE PAGE */
+
+
+/* PRDDUCTS PAGE */
+
+#product-display{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    background: rgb(250, 250, 250);
+    text-align: center;
+ }
+
+ #product-display li{
+     list-style: none;
+ }
+
+ #product-footer{
+     /* position: relative; */
+ }
+
+
+/* END OF PRODUCTS PAGE */
