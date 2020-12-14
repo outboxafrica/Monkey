@@ -11,7 +11,18 @@ var productList = [
     {name:'Pyramid all-suit', price: 33000, id: 8 },
     {name:'Marathon shorts', price: 9000, id: 9 },
     {name:'Diesel wallet', price: 93000, id: 10 },
-    {name:'Gucci watch', price: 52300, id: 11 }
+    {name:'Gucci watch', price: 52300, id: 11 },
+    {name:'D&G Jacket', price: 72300, id: 12 },
+    {name:'WSBT earbuds', price: 1300, id: 13 },
+    {name:'French coat', price: 72300, id: 14 },
+    {name:'Arsenal jersey', price: 100300, id: 15 },
+    {name:'D&G Jacket', price: 72300, id: 16 },
+    {name:'PaulSmith shoes', price: 72300, id: 17 },
+    {name:'Chuck Taylors', price: 12300, id: 18 },
+    {name:'D&G Jacket', price: 25300, id: 19 },
+    {name:'D&G Jacket', price: 44300, id: 20 },
+    {name:'D&G Jacket', price: 7300, id: 21 },
+    {name:'D&G Jacket', price: 12300, id: 22 }
 ];
 
 var cart = []; // array of selected items to be bought
@@ -64,6 +75,7 @@ const addItemToCart = function(e) {
     cart.push(productList.find(product => product.id === Number.parseInt(e.target.id))); 
     document.getElementById('cart').innerHTML = '';
     popullateContainerWithItems('cart', cart);
+    alert('Item added successfully');
 }
 
 
@@ -80,7 +92,7 @@ const removeFromCart = function(e) {
 
       // add our filtered items to the cart in the html
       popullateContainerWithItems('cart', cart);
-
+      alert('Item successfully removed');
 }
 
 
