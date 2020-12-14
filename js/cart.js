@@ -25,6 +25,7 @@ const popullateContainerWithItems = function(containerId, itemList){
     let itemName = document.createElement('span'); // creating html element to house the product name
     let actionButton = document.createElement('button'); //creating the button element
     actionButton.id = item.id; //setting the id of each item to the id of a corresponding button
+    actionButton.className = 'action-btn'
     
 
     // adding product details to our list items
@@ -35,6 +36,7 @@ const popullateContainerWithItems = function(containerId, itemList){
       actionButton.addEventListener('click', addItemToCart);
     } else {
       actionButton.innerText = 'Remove from cart';
+      actionButton.className = 'remove'
       actionButton.addEventListener('click', removeFromCart);
     }
 
