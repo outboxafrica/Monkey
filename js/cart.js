@@ -19,10 +19,10 @@ var productList = [
     {name:'D&G Jacket', price: 72300, id: 16 },
     {name:'PaulSmith shoes', price: 72300, id: 17 },
     {name:'Chuck Taylors', price: 12300, id: 18 },
-    {name:'D&G Jacket', price: 25300, id: 19 },
-    {name:'D&G Jacket', price: 44300, id: 20 },
-    {name:'D&G Jacket', price: 7300, id: 21 },
-    {name:'D&G Jacket', price: 12300, id: 22 }
+    {name:'D&G watch', price: 25300, id: 19 },
+    {name:'Abryanz Jacket', price: 44300, id: 20 },
+    {name:'TMT Jacket', price: 7300, id: 21 },
+    {name:'Colon gucci', price: 12300, id: 22 }
 ];
 
 var cart = []; // array of selected items to be bought
