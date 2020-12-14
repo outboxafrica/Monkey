@@ -125,3 +125,46 @@ aside{
     /* margin-bottom: 1rem; */
     text-align: center;
 }
+
+@media (max-width:900px){
+
+    .fa-cart-plus{
+        position: absolute;
+        font-size: 2.5rem;
+        right:3rem;
+        color: #fff;
+    }
+    #section{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6.5rem;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    aside{
+        text-align: center;
+        display: flex;
+        margin: auto;
+    }
+
+    #order{
+        text-align: center;
+        color: #fff;
+        background: rgb(247, 95, 39);
+        padding: 10px;
+        outline: none;
+        /* margin-right: 0; */
+        position: relative;
+        /* right: 3.3rem; */
+        width: 20rem;
+    }
+}
+
+@media (max-width:750px){
+    #products > ul{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 30px 20px;
+    }
+}
