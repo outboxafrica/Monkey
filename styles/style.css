@@ -1,5 +1,4 @@
 /* INDEX PAGE */
-
 *{
     margin: 0;
     padding: 0;
@@ -52,6 +51,7 @@ label{
 input{
     padding: 0.5rem;
     width: 100%;
+    outline: none;
 }
 
 ::placeholder{
@@ -62,8 +62,12 @@ input{
 #log-in{
     margin-bottom: 2rem;
 }
+.log-in > button{
+    outline: none;
+}
 
-#log-in > button > a{
+.log-in > button > a{
+    width: 100%;
     color: #fff;
 }
 
@@ -71,6 +75,7 @@ input{
     /* background: blue; */
     padding: 1rem;
     min-height: 2rem;
+    margin-bottom: 4rem;
 }
 
 #div-link{
@@ -104,3 +109,21 @@ input{
      width: 100%;
      margin-bottom: 1rem;
  }
+
+ /* END OF INDEX PAGE */
+
+
+
+ /* CREATE ACCOUNT PAGE */
+
+ header > h3{
+    font-size: 2rem;
+    color: #337ab5;
+    font-weight: 700;
+}
+
+.create{
+    margin-top: 2rem;
+}
+
+/* END OF CREATE PAGE */
