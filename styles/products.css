@@ -163,6 +163,10 @@ aside{
         width: 60%;
     }
 
+    #products{
+        width: 100%;
+    }
+
     #products > ul{
         display: grid;
         grid-template-columns: auto auto;
