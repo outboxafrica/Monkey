@@ -79,6 +79,11 @@ input{
     text-align: center;
     border: 1px solid #044479 ;
     box-shadow: 2px 2px 5px 3px #337ab5;
+    transition: .5s;
+}
+
+#products > ul >li:hover{
+    transform: translateY(-5px);
 }
 
 #products > ul >li > span{
@@ -218,7 +223,7 @@ ul{
 
 
 
-@media (max-width:900px){
+@media (max-width:1000px){
 
     .fa-cart-plus{
         right:3rem;
