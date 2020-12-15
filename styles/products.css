@@ -265,6 +265,10 @@ ul{
         width: 60%;
     }
 
+    input{
+        width: 11rem;
+    }
+
     #products{
         width: 100%;
         display: flex;
