@@ -62,7 +62,6 @@ input{
 #products{
     width: 70%;
     padding: 1rem;
-    /* background: rgb(240, 240, 240) ; */
     background: #416586 ;
 }
 
@@ -102,15 +101,12 @@ aside{
     padding: 1rem;
     background: #337ab5;
     width: 30%;
-    /* border-left: 2px solid #337ab5; */
 }
 
 aside ul li{
     border-bottom: 1px solid #044479 ;
-    /* box-shadow: 2px 2px 5px 3px #337ab5; */
     display: flex;
     padding: 1rem;
-    /* width: 50%; */
 }
 
 aside ul li span{
@@ -118,13 +114,6 @@ aside ul li span{
     margin-right: 5px;
 }
 
-/* aside ul li button{
-    width: 20%;
-} */
-
-#cart{
-    /* margin-bottom: 4rem; */
-}
 
 .remove{
     background-color: rgb(253, 61, 61);
@@ -153,14 +142,6 @@ aside ul li span{
     text-decoration: none;
 }
 
- /* footer{
-    height: 2rem;
-    padding: 1.5rem;
-    border-top: 1px solid #777;
-    font-size: 1.5rem;
-    width: 100%;
-    text-align: center;
-} */
 
 .footer{
     background: #044479;
@@ -248,7 +229,6 @@ ul{
     aside > ul{
         display: flex;
         width: 100%;
-        /* margin-left: rem; */
     }
 
     #order{
