@@ -262,11 +262,13 @@ ul{
 
     #products{
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     #products > ul{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         grid-gap: 30px 4px;
     }
 }
