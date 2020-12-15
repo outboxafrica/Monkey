@@ -19,11 +19,76 @@ var productList = [
     {name:'D&G Jacket', price: 72300, id: 16 },
     {name:'PaulSmith shoes', price: 72300, id: 17 },
     {name:'Chuck Taylors', price: 12300, id: 18 },
-    {name:'D&G watch', price: 25300, id: 19 },
-    {name:'Abryanz Jacket', price: 44300, id: 20 },
-    {name:'TMT Jacket', price: 7300, id: 21 },
-    {name:'Colon gucci', price: 12300, id: 22 }
+    {name:'D&G Jacket', price: 25300, id: 19 },
+    {name:'D&G Jacket', price: 44300, id: 20 },
+    {name:'D&G Jacket', price: 7300, id: 21 },
+    {name:'D&G Jacket', price: 12300, id: 22 }
 ];
+//search js starts here
+const list = document.getElementById('list');
+
+function setList(group){
+    clearList();
+    for(const product of group){
+        const item =document.createElement('li');
+        item.classList.add('list-group-item');
+        const text = document.createTextNode(product.name);
+        item.appendChild(text);
+        list.appendChild(item); 
+    }
+    if (group.length===0) {
+         setNoResults();
+    }
+}
+
+function clearList(){
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+}
+function setNoResults(){
+  const item =document.createElement('li');
+  item.classList.add('list-group-item');
+  const text = document.createTextNode('No match found');
+  item.appendChild(text);
+  list.appendChild(item); 
+}
+
+function getRelevancy (value, searchTerm){
+  if(value===searchTerm) {
+      return 35;
+  }else if(value.startsWith(searchTerm)){
+      return 5;
+
+  }else if(value.includes(searchTerm)){
+      return 2;
+  }else return -1;
+  
+
+}
+
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input',(event)=>{
+  let value =event.target.value;
+  if (value && value.trim().length>0){
+      value= value.trim().toLowerCase();
+      setList(productList.filter(product=>{
+        return product.name.includes(value);
+      })).sort((product1,product2)=>{
+        return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
+      });
+  }else{
+    clearList();
+  }
+});
+// end of search js
+
+
+
+
+
+
 
 var cart = []; // array of selected items to be bought
 
