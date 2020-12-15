@@ -132,6 +132,10 @@ const popullateContainerWithItems = function(containerId, itemList){
     } else {
     orderButton.style.display = 'none';
     }
+
+    orderButton.addEventListener('click', function(){
+      alert('Thank you for shopping with us!')
+    })
 }
 
 const addItemToCart = function(e) {

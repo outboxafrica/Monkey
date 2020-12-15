@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
     margin: auto;
-    background: rgb(250, 250, 250);
+    background:  #044479;;
     text-align: center;
  }
 
@@ -22,7 +22,7 @@
 
  header > h2{
      font-size: 4rem;
-     color: #337ab5;
+     color: #337ab7;
      font-weight: 900;
  }
 
@@ -95,24 +95,12 @@ input{
 }
 
 .div-link > p{ 
-    color: #777;
+    color: #bbb;
 }
 
 .div-link > a{
     margin-right: 10rem;
 }
-
- #footer{
-     /* background-color: blue; */
-     height: 2rem;
-     padding: 1.5rem;
-     border-top: 1px solid #777;
-     bottom: 0;
-     position: absolute;
-     font-size: 1.5rem;
-     width: 100%;
-     margin-bottom: 1rem;
- }
 
  /* END OF INDEX PAGE */
 
@@ -122,8 +110,8 @@ input{
 
  header > h3{
     font-size: 2rem;
-    color: #337ab5;
     font-weight: 700;
+    color:#337ab7;
 }
 
 .create{
