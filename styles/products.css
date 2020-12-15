@@ -101,7 +101,7 @@ aside{
 }
 
 aside ul li{
-    border: 1px solid #044479 ;
+    border-bottom: 1px solid #044479 ;
     /* box-shadow: 2px 2px 5px 3px #337ab5; */
     display: flex;
     padding: 1rem;
