@@ -26,20 +26,20 @@ var productList = [{
   price: 24000,
   id: 5
 }, {
-  name: 'Fenty lingerie',
-  price: 60000,
+  name: 'D&G Jacket',
+  price: 44300,
   id: 6
 }, {
-  name: 'Fenty prints-on',
-  price: 15000,
+  name: 'Fenty lingerie',
+  price: 60000,
   id: 7
 }, {
   name: 'Pyramid all-suit',
   price: 33000,
   id: 8
 }, {
-  name: 'Marathon shorts',
-  price: 9000,
+  name: 'D&G Jacket',
+  price: 25300,
   id: 9
 }, {
   name: 'Diesel wallet',
@@ -66,32 +66,32 @@ var productList = [{
   price: 100300,
   id: 15
 }, {
-  name: 'D&G Jacket',
-  price: 72300,
+  name: 'Marathon shorts',
+  price: 9000,
   id: 16
 }, {
-  name: 'PaulSmith shoes',
+  name: 'D&G Jacket',
   price: 72300,
   id: 17
 }, {
-  name: 'Chuck Taylors',
-  price: 12300,
+  name: 'PaulSmith shoes',
+  price: 72300,
   id: 18
 }, {
-  name: 'D&G Jacket',
-  price: 25300,
+  name: 'Chuck Taylors',
+  price: 12300,
   id: 19
 }, {
   name: 'D&G Jacket',
-  price: 44300,
+  price: 7300,
   id: 20
 }, {
   name: 'D&G Jacket',
-  price: 7300,
+  price: 12300,
   id: 21
 }, {
-  name: 'D&G Jacket',
-  price: 12300,
+  name: 'Fenty prints-on',
+  price: 15000,
   id: 22
 }]; //search js starts here
 
