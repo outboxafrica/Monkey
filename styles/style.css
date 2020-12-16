@@ -54,6 +54,10 @@ input{
     outline: none;
 }
 
+input:focus{
+    border: 3px solid #337ab7;
+}
+
 ::placeholder{
     font-size: 1.2rem;
     color: #bbb;
