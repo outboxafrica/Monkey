@@ -24,36 +24,39 @@ var productList = [
     {name:'D&G Jacket',image:"D&G Jacket4.jpg", price: 7300, id: 21 },
     {name:'D&G Jacket',image :"D&G Jacket5.jpg", price: 12300, id: 22 }
 ];
+
+var searchList = []
 //search js starts here
-const list = document.getElementById('list');
+// const list = document.getElementById('list');
 
 //display list from search
-function setList(group){
-    clearList();
-    for(const product of group){
-        const item =document.createElement('li');
-        item.classList.add('list-group-item');
-        const text = document.createTextNode(product.name);
-        item.appendChild(text);
-        list.appendChild(item); 
-    }
-    if (group.length===0) {
-         setNoResults();
-    }
-}
+// function setList(group){
+//     clearList();
+//     for(const product of group){
+//       popullateContainerWithItems('products', group)
+//         // const item =document.createElement('li');
+//         // item.classList.add('list-group-item');
+//         // const text = document.createTextNode(product.name);
+//         // item.appendChild(text);
+//         // list.appendChild(item); 
+//     }
+//     if (group.length===0) {
+//          setNoResults();
+//     }
+// }
 
-function clearList(){
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-}
-function setNoResults(){
-  const item =document.createElement('li');
-  item.classList.add('list-group-item');
-  const text = document.createTextNode('No match found');
-  item.appendChild(text);
-  list.appendChild(item); 
-}
+// function clearList(){
+//     while (list.firstChild) {
+//       list.removeChild(list.firstChild);
+//     }
+// }
+// function setNoResults(){
+//   const item =document.createElement('li');
+//   item.classList.add('list-group-item');
+//   const text = document.createTextNode('No match found');
+//   item.appendChild(text);
+//   list.appendChild(item); 
+// }
 
 function getRelevancy (value, searchTerm){
   if(value===searchTerm) {
@@ -74,13 +77,17 @@ searchInput.addEventListener('input',(event)=>{
   let value =event.target.value;
   if (value && value.trim().length>0){
       value= value.trim().toLowerCase();
-      setList(productList.filter(product=>{
-        return product.name.includes(value);
-      })).sort((product1,product2)=>{
-        return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
-      });
+      // console.log(productList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)))
+      searchList = productList
+      popullateContainerWithItems('products', searchList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)), true)
+      // setList(productList.filter(product=>{
+      //   return product.name.toLowerCase().includes(value);
+      // })).sort((product1,product2)=>{
+      //   return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
+      // });
   }else{
-    clearList();
+    // clearList();
+    popullateContainerWithItems('products', productList, true)
   }
 });
 // end of search js
@@ -90,8 +97,19 @@ searchInput.addEventListener('input',(event)=>{
 var cart = []; // array of selected items to be bought
 
 // This will popullate both products and cart lists in our page
-const popullateContainerWithItems = function(containerId, itemList){
+const popullateContainerWithItems = function(containerId, itemList, isSearching = false){
+  // console.log('setting', itemList, 'to', containerId)
   var list = document.createElement('ul'); //create ul element to hold product list
+  if(isSearching) {
+    document.getElementById('products').innerHTML = '';
+    if(itemList.length === 0){
+      const item =document.createElement('li');
+      item.classList.add('list-group-item');
+      const text = document.createTextNode('No match found');
+      item.appendChild(text);
+      list.appendChild(item);
+    }
+  }
 
   itemList.forEach(item => {
     let itemContainer = document.createElement('li'); // creating the list item
