@@ -24,7 +24,6 @@ var productList = [
     {name:'D&G Jacket',image:"D&G Jacket4.jpg", price: 7300, id: 21 },
     {name:'D&G Jacket',image :"D&G Jacket5.jpg", price: 12300, id: 22 }
 ];
-
 var searchList = []
 //search js starts here
 // const list = document.getElementById('list');
@@ -59,7 +58,7 @@ var searchList = []
 // }
 
 function getRelevancy (value, searchTerm){
-  if(value===searchTerm) {
+  if(value === searchTerm) {
       return 35;
   }else if(value.startsWith(searchTerm)){
       return 5;
@@ -75,7 +74,7 @@ const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input',(event)=>{
   let value =event.target.value;
-  if (value && value.trim().length>0){
+  if (value && value.trim().length > 0){
       value= value.trim().toLowerCase();
       // console.log(productList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)))
       searchList = productList

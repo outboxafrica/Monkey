@@ -184,6 +184,7 @@ var cart = []; // array of selected items to be bought
 // This will popullate both products and cart lists in our page
 
 var popullateContainerWithItems = function popullateContainerWithItems(containerId, itemList) {
+
   var isSearching = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   // console.log('setting', itemList, 'to', containerId)
   var list = document.createElement('ul'); //create ul element to hold product list
