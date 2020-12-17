@@ -68,8 +68,8 @@ input{
 #products > ul{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 30px 20px;
-    padding: 2rem;
+    grid-gap: 20px 10px;
+    padding: 1rem;
 }
 
 #products > ul >li{
@@ -80,6 +80,10 @@ input{
     box-shadow: 2px 2px 5px 3px #337ab5;
     transition: .5s;
 }
+#products > ul >li > img{
+height: 15rem;
+width: 20rem;
+}
 
 #products > ul >li:hover{
     transform: translateY(-5px);
@@ -89,6 +93,7 @@ input{
     color: rgb(220, 220, 220);
 }
 
+
 .action-btn{
     padding: 5px;
     width: 10rem;
@@ -97,6 +102,9 @@ input{
     
     outline: none;
 }
+    
+
+
 aside{
     padding: 1rem;
     background: #337ab5;

@@ -3,148 +3,149 @@
 // list of products to be listed for sale
 var productList = [{
   name: 'Dior T-shirt',
+  image: "Dior T-shirt.jpg",
   price: 28000,
   id: 0
 }, {
   name: 'Armani Coat',
+  image: "Armani Coat.jpg",
   price: 44000,
   id: 1
 }, {
   name: 'High-top Nike23',
+  image: "High-top Nike23.jpg",
   price: 16000,
   id: 2
 }, {
   name: 'Trukfit sweater pant',
+  image: "Trukfit sweater pant.jpg",
   price: 30000,
   id: 3
 }, {
   name: 'Roc-wear cap',
+  image: "Roc-wear cap.jpg",
   price: 40000,
   id: 4
 }, {
   name: 'Yeezy superbs',
+  image: "Yeezy superbs.jpg",
   price: 24000,
   id: 5
 }, {
-  name: 'D&G Jacket',
-  price: 44300,
+  name: 'Fenty lingerie',
+  image: "Fenty lingerie.jpg",
+  price: 60000,
   id: 6
 }, {
-  name: 'Fenty lingerie',
-  price: 60000,
+  name: 'Fenty prints-on',
+  image: "Fenty prints-on.jpg",
+  price: 15000,
   id: 7
 }, {
   name: 'Pyramid all-suit',
+  image: "Pyramid all-suit.jpg",
   price: 33000,
   id: 8
 }, {
-  name: 'D&G Jacket',
-  price: 25300,
+  name: 'Marathon shorts',
+  image: "Marathon shorts.jpg",
+  price: 9000,
   id: 9
 }, {
   name: 'Diesel wallet',
+  image: "Diesel wallet.jpg",
   price: 93000,
   id: 10
 }, {
   name: 'Gucci watch',
+  image: "Gucci watch.jpg",
   price: 52300,
   id: 11
 }, {
   name: 'D&G Jacket',
+  image: "D&G Jacket.jpg",
   price: 72300,
   id: 12
 }, {
   name: 'WSBT earbuds',
+  image: "WSBT earbuds.jpg",
   price: 1300,
   id: 13
 }, {
   name: 'French coat',
+  image: "French coat.jpg",
   price: 72300,
   id: 14
 }, {
   name: 'Arsenal jersey',
+  image: "Arsenal jersey.jpg",
   price: 100300,
   id: 15
 }, {
-  name: 'Marathon shorts',
-  price: 9000,
+  name: 'D&G Jacket',
+  image: "D&G Jacket1.jpg",
+  price: 72300,
   id: 16
 }, {
-  name: 'D&G Jacket',
+  name: 'PaulSmith shoes',
+  image: "PaulSmith shoes.jpg",
   price: 72300,
   id: 17
 }, {
-  name: 'PaulSmith shoes',
-  price: 72300,
+  name: 'Chuck Taylors',
+  image: "Chuck Taylors.jpg",
+  price: 12300,
   id: 18
 }, {
-  name: 'Chuck Taylors',
-  price: 12300,
+  name: 'D&G Jacket',
+  image: "D&G Jacket2.jpg",
+  price: 25300,
   id: 19
 }, {
   name: 'D&G Jacket',
-  price: 7300,
+  image: "D&G Jacket3.jpg",
+  price: 44300,
   id: 20
 }, {
   name: 'D&G Jacket',
-  price: 12300,
+  image: "D&G Jacket4.jpg",
+  price: 7300,
   id: 21
 }, {
-  name: 'Fenty prints-on',
-  price: 15000,
+  name: 'D&G Jacket',
+  image: "D&G Jacket5.jpg",
+  price: 12300,
   id: 22
-}]; //search js starts here
-
-var list = document.getElementById('list');
-
-function setList(group) {
-  clearList();
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = group[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var product = _step.value;
-      var item = document.createElement('li');
-      item.classList.add('list-group-item');
-      var text = document.createTextNode(product.name);
-      item.appendChild(text);
-      list.appendChild(item);
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  if (group.length === 0) {
-    setNoResults();
-  }
-}
-
-function clearList() {
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-  }
-}
-
-function setNoResults() {
-  var item = document.createElement('li');
-  item.classList.add('list-group-item');
-  var text = document.createTextNode('No match found');
-  item.appendChild(text);
-  list.appendChild(item);
-}
+}];
+var searchList = []; //search js starts here
+// const list = document.getElementById('list');
+//display list from search
+// function setList(group){
+//     clearList();
+//     for(const product of group){
+//       popullateContainerWithItems('products', group)
+//         // const item =document.createElement('li');
+//         // item.classList.add('list-group-item');
+//         // const text = document.createTextNode(product.name);
+//         // item.appendChild(text);
+//         // list.appendChild(item); 
+//     }
+//     if (group.length===0) {
+//          setNoResults();
+//     }
+// }
+// function clearList(){
+//     while (list.firstChild) {
+//       list.removeChild(list.firstChild);
+//     }
+// }
+// function setNoResults(){
+//   const item =document.createElement('li');
+//   item.classList.add('list-group-item');
+//   const text = document.createTextNode('No match found');
+//   item.appendChild(text);
+//   list.appendChild(item); 
+// }
 
 function getRelevancy(value, searchTerm) {
   if (value === searchTerm) {
@@ -161,14 +162,21 @@ searchInput.addEventListener('input', function (event) {
   var value = event.target.value;
 
   if (value && value.trim().length > 0) {
-    value = value.trim().toLowerCase();
-    setList(productList.filter(function (product) {
-      return product.name.includes(value);
-    })).sort(function (product1, product2) {
-      return getRelevancy(product2.name, value) - getRelevancy(product1.name, value);
-    });
+    value = value.trim().toLowerCase(); // console.log(productList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)))
+
+    searchList = productList;
+    popullateContainerWithItems('products', searchList.filter(function (product) {
+      return product.name.toLowerCase().includes(value);
+    }).sort(function (a, b) {
+      return b.name - a.name;
+    }), true); // setList(productList.filter(product=>{
+    //   return product.name.toLowerCase().includes(value);
+    // })).sort((product1,product2)=>{
+    //   return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
+    // });
   } else {
-    clearList();
+    // clearList();
+    popullateContainerWithItems('products', productList, true);
   }
 }); // end of search js
 
@@ -176,7 +184,22 @@ var cart = []; // array of selected items to be bought
 // This will popullate both products and cart lists in our page
 
 var popullateContainerWithItems = function popullateContainerWithItems(containerId, itemList) {
-  list = document.createElement('ul'); //create ul element to hold product list
+
+  var isSearching = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  // console.log('setting', itemList, 'to', containerId)
+  var list = document.createElement('ul'); //create ul element to hold product list
+
+  if (isSearching) {
+    document.getElementById('products').innerHTML = '';
+
+    if (itemList.length === 0) {
+      var item = document.createElement('li');
+      item.classList.add('list-group-item');
+      var text = document.createTextNode('No match found');
+      item.appendChild(text);
+      list.appendChild(item);
+    }
+  }
 
   itemList.forEach(function (item) {
     var itemContainer = document.createElement('li'); // creating the list item
@@ -192,6 +215,7 @@ var popullateContainerWithItems = function popullateContainerWithItems(container
     itemName.innerText = item.name + '\n UGX ' + item.price + '\n'; //adding the name and price of each item to a span element
 
     if (containerId === 'products') {
+      itemContainer.appendChild(document.createElement('img')).src = item.image;
       actionButton.innerText = 'Add to cart';
       actionButton.addEventListener('click', addItemToCart);
     } else {
@@ -227,8 +251,7 @@ var addItemToCart = function addItemToCart(e) {
     return product.id === Number.parseInt(e.target.id);
   }));
   document.getElementById('cart').innerHTML = '';
-  popullateContainerWithItems('cart', cart);
-  alert('Item added successfully');
+  popullateContainerWithItems('cart', cart); // alert('Item added successfully');
 };
 
 var removeFromCart = function removeFromCart(e) {

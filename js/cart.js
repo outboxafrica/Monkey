@@ -1,58 +1,61 @@
 // list of products to be listed for sale
 var productList = [
-    {name:'Dior T-shirt', price:  28000, id: 0},
-    {name:'Armani Coat', price: 44000, id: 1 },
-    {name:'High-top Nike23', price: 16000, id: 2 },
-    {name:'Trukfit sweater pant', price: 30000, id: 3 },
-    {name:'Roc-wear cap', price: 40000, id: 4 },
-    {name:'Yeezy superbs', price: 24000, id: 5 },
-    {name:'D&G Jacket', price: 44300, id: 6 },
-    {name:'Fenty lingerie', price: 60000, id: 7 },
-    {name:'Pyramid all-suit', price: 33000, id: 8 },
-    {name:'D&G Jacket', price: 25300, id: 9 },
-    {name:'Diesel wallet', price: 93000, id: 10 },
-    {name:'Gucci watch', price: 52300, id: 11 },
-    {name:'D&G Jacket', price: 72300, id: 12 },
-    {name:'WSBT earbuds', price: 1300, id: 13 },
-    {name:'French coat', price: 72300, id: 14 },
-    {name:'Arsenal jersey', price: 100300, id: 15 },
-    {name:'Marathon shorts', price: 9000, id: 16 },
-    {name:'D&G Jacket', price: 72300, id: 17 },
-    {name:'PaulSmith shoes', price: 72300, id: 18 },
-    {name:'Chuck Taylors', price: 12300, id: 19 },
-    {name:'D&G Jacket', price: 7300, id: 20 },
-    {name:'D&G Jacket', price: 12300, id: 21 },
-    {name:'Fenty prints-on', price: 15000, id: 22 }
+    {name:'Dior T-shirt',image:"Dior T-shirt.jpg", price:  28000, id: 0 },
+    {name:'Armani Coat',image:"Armani Coat.jpg", price: 44000, id: 1 },
+    {name:'High-top Nike23',image:"High-top Nike23.jpg", price: 16000, id: 2 },
+    {name:'Trukfit sweater pant',image:"Trukfit sweater pant.jpg", price: 30000, id: 3 },
+    {name:'Roc-wear cap',image:"Roc-wear cap.jpg", price: 40000, id: 4 },
+    {name:'Yeezy superbs',image:"Yeezy superbs.jpg", price: 24000, id: 5 },
+    {name:'Fenty lingerie',image:"Fenty lingerie.jpg", price: 60000, id: 6 },
+    {name:'Fenty prints-on',image:"Fenty prints-on.jpg", price: 15000, id: 7 },
+    {name:'Pyramid all-suit',image:"Pyramid all-suit.jpg", price: 33000, id: 8 },
+    {name:'Marathon shorts',image:"Marathon shorts.jpg", price: 9000, id: 9 },
+    {name:'Diesel wallet',image:"Diesel wallet.jpg", price: 93000, id: 10 },
+    {name:'Gucci watch',image:"Gucci watch.jpg", price: 52300, id: 11 },
+    {name:'D&G Jacket',image:"D&G Jacket.jpg", price: 72300, id: 12 },
+    {name:'WSBT earbuds',image:"WSBT earbuds.jpg", price: 1300, id: 13 },
+    {name:'French coat',image:"French coat.jpg", price: 72300, id: 14 },
+    {name:'Arsenal jersey',image:"Arsenal jersey.jpg", price: 100300, id: 15 },
+    {name:'D&G Jacket',image:"D&G Jacket1.jpg", price: 72300, id: 16 },
+    {name:'PaulSmith shoes',image:"PaulSmith shoes.jpg", price: 72300, id: 17 },
+    {name:'Chuck Taylors',image:"Chuck Taylors.jpg", price: 12300, id: 18 },
+    {name:'D&G Jacket',image:"D&G Jacket2.jpg", price: 25300, id: 19 },
+    {name:'D&G Jacket',image:"D&G Jacket3.jpg", price: 44300, id: 20 },
+    {name:'D&G Jacket',image:"D&G Jacket4.jpg", price: 7300, id: 21 },
+    {name:'D&G Jacket',image :"D&G Jacket5.jpg", price: 12300, id: 22 }
 ];
+var searchList = []
 //search js starts here
-let list = document.getElementById('list');
+// const list = document.getElementById('list');
 
-function setList(group){
-    clearList();
-    for(const product of group){
-        const item =document.createElement('li');
-        item.classList.add('list-group-item');
-        const text = document.createTextNode(product.name);
-        item.appendChild(text);
-        list.appendChild(item); 
-    }
-    if (group.length === 0) {
-         setNoResults();
-    }
-}
+//display list from search
+// function setList(group){
+//     clearList();
+//     for(const product of group){
+//       popullateContainerWithItems('products', group)
+//         // const item =document.createElement('li');
+//         // item.classList.add('list-group-item');
+//         // const text = document.createTextNode(product.name);
+//         // item.appendChild(text);
+//         // list.appendChild(item); 
+//     }
+//     if (group.length===0) {
+//          setNoResults();
+//     }
+// }
 
-function clearList(){
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-}
-function setNoResults(){
-  const item =document.createElement('li');
-  item.classList.add('list-group-item');
-  const text = document.createTextNode('No match found');
-  item.appendChild(text);
-  list.appendChild(item); 
-}
+// function clearList(){
+//     while (list.firstChild) {
+//       list.removeChild(list.firstChild);
+//     }
+// }
+// function setNoResults(){
+//   const item =document.createElement('li');
+//   item.classList.add('list-group-item');
+//   const text = document.createTextNode('No match found');
+//   item.appendChild(text);
+//   list.appendChild(item); 
+// }
 
 function getRelevancy (value, searchTerm){
   if(value === searchTerm) {
@@ -73,49 +76,64 @@ searchInput.addEventListener('input',(event)=>{
   let value =event.target.value;
   if (value && value.trim().length > 0){
       value= value.trim().toLowerCase();
-      setList(productList.filter(product=>{
-        return product.name.includes(value);
-      })).sort((product1,product2)=>{
-        return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
-      });
+      // console.log(productList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)))
+      searchList = productList
+      popullateContainerWithItems('products', searchList.filter(product => product.name.toLowerCase().includes(value)).sort((a, b) => (b.name - a.name)), true)
+      // setList(productList.filter(product=>{
+      //   return product.name.toLowerCase().includes(value);
+      // })).sort((product1,product2)=>{
+      //   return getRelevancy(product2.name,value)-getRelevancy(product1.name,value);
+      // });
   }else{
-    clearList();
+    // clearList();
+    popullateContainerWithItems('products', productList, true)
   }
 });
 // end of search js
 
 
 
-
-
-
 var cart = []; // array of selected items to be bought
 
 // This will popullate both products and cart lists in our page
-const popullateContainerWithItems = function(containerId, itemList){
-   list = document.createElement('ul'); //create ul element to hold product list
+const popullateContainerWithItems = function(containerId, itemList, isSearching = false){
+  // console.log('setting', itemList, 'to', containerId)
+  var list = document.createElement('ul'); //create ul element to hold product list
+  if(isSearching) {
+    document.getElementById('products').innerHTML = '';
+    if(itemList.length === 0){
+      const item =document.createElement('li');
+      item.classList.add('list-group-item');
+      const text = document.createTextNode('No match found');
+      item.appendChild(text);
+      list.appendChild(item);
+    }
+  }
 
   itemList.forEach(item => {
     let itemContainer = document.createElement('li'); // creating the list item
     let itemName = document.createElement('span'); // creating html element to house the product name
+  
     let actionButton = document.createElement('button'); //creating the button element
     actionButton.id = item.id; //setting the id of each item to the id of a corresponding button
     actionButton.className = 'action-btn'
     
 
     // adding product details to our list items
+    
     itemName.innerText = item.name +  '\n UGX ' + item.price + '\n'; //adding the name and price of each item to a span element
 
     if (containerId === 'products'){
+      itemContainer.appendChild(document.createElement('img')).src=item.image;
       actionButton.innerText = 'Add to cart';
       actionButton.addEventListener('click', addItemToCart);
     } else {
       actionButton.innerText = 'Remove from cart';
-      actionButton.className = 'remove'
+      actionButton.className = 'remove';
       actionButton.addEventListener('click', removeFromCart);
     }
-
-
+ 
+    
     itemContainer.appendChild(itemName); // adding name and price of each item to a li element
     itemContainer.appendChild(actionButton); // adding a button to a li element
     list.appendChild(itemContainer); // adding li element to a ul element
@@ -143,7 +161,8 @@ const addItemToCart = function(e) {
     cart.push(productList.find(product => product.id === Number.parseInt(e.target.id))); 
     document.getElementById('cart').innerHTML = '';
     popullateContainerWithItems('cart', cart);
-    alert('Item added successfully');
+    // alert('Item added successfully');
+  
 }
 
 
