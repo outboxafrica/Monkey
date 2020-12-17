@@ -176,7 +176,7 @@ var cart = []; // array of selected items to be bought
 // This will popullate both products and cart lists in our page
 
 var popullateContainerWithItems = function popullateContainerWithItems(containerId, itemList) {
-  var list = document.createElement('ul'); //create ul element to hold product list
+  list = document.createElement('ul'); //create ul element to hold product list
 
   itemList.forEach(function (item) {
     var itemContainer = document.createElement('li'); // creating the list item

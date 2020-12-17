@@ -25,7 +25,7 @@ var productList = [
     {name:'Fenty prints-on', price: 15000, id: 22 }
 ];
 //search js starts here
-const list = document.getElementById('list');
+let list = document.getElementById('list');
 
 function setList(group){
     clearList();
@@ -36,7 +36,7 @@ function setList(group){
         item.appendChild(text);
         list.appendChild(item); 
     }
-    if (group.length===0) {
+    if (group.length === 0) {
          setNoResults();
     }
 }
@@ -55,7 +55,7 @@ function setNoResults(){
 }
 
 function getRelevancy (value, searchTerm){
-  if(value===searchTerm) {
+  if(value === searchTerm) {
       return 35;
   }else if(value.startsWith(searchTerm)){
       return 5;
@@ -71,7 +71,7 @@ const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input',(event)=>{
   let value =event.target.value;
-  if (value && value.trim().length>0){
+  if (value && value.trim().length > 0){
       value= value.trim().toLowerCase();
       setList(productList.filter(product=>{
         return product.name.includes(value);
@@ -93,7 +93,7 @@ var cart = []; // array of selected items to be bought
 
 // This will popullate both products and cart lists in our page
 const popullateContainerWithItems = function(containerId, itemList){
-  var list = document.createElement('ul'); //create ul element to hold product list
+   list = document.createElement('ul'); //create ul element to hold product list
 
   itemList.forEach(item => {
     let itemContainer = document.createElement('li'); // creating the list item
