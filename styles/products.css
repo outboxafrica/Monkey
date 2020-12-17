@@ -183,6 +183,12 @@ aside ul li span{
     flex-basis: 12%;
     text-align: center;
 }
+
+.fab{
+    font-size: 3.5rem;
+    padding: 1rem;
+}
+
 ul{
     list-style-type: none;
 }
