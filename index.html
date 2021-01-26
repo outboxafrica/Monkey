@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="shortcut icon" type="image/png" href="./images/logo.png">
 </head>
 <body id="login-page">
     <main class="container-fluid container">
@@ -14,20 +15,20 @@
             <h2>Online Shopping</h2>
         </header>
     
-        <form action="" method="GET">
+        <form action="" method="GET" id="login-form">
             <div class="login" id="email-or-number">
                 <label for="">
-                    <input type="text" name="" placeholder="Mobile number or email" required>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
                 </label>
             </div>
             <div class="login" id="password" >
                 <label for="">
-                    <input type="password" name=""  placeholder="Password" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </label>
             </div>
         </form>
         <div class="log-in">
-            <button class="btn btn-primary btn-block"><a href="./productspage/products.html">Log In</a></button>
+            <button class="btn btn-primary btn-block" id="login-btn"><a href="./productspage/products.html">Log In</a></button>
         </div>
         <div id="links">
             <div id="div-link">
@@ -39,5 +40,6 @@
         </div>
     </main>
     <!-- <footer id="footer">&copy; Online Shopping, Inc.</footer> -->
+    <script src="./js/form.js"></script>
 </body>
 </html>

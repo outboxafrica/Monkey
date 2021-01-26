@@ -48,10 +48,28 @@ label{
     width: 100%;
 }
 
+.label-header{
+    float: left;
+    color: #eee;
+    font-size: 1.2rem;
+}
+
 input{
     padding: 0.5rem;
     width: 100%;
     outline: none;
+}
+
+.valid{
+    border: 2px solid #44e444;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.invalid{
+    font-weight: 200;
+    font-size: 1.2rem;
+    border: 2px solid #ff0000;
 }
 
 ::placeholder{

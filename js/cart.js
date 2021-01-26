@@ -24,6 +24,9 @@ var productList = [
     {name:'D&G Jacket',image:"D&G Jacket4.jpg", price: 7300, id: 21 },
     {name:'D&G Jacket',image :"D&G Jacket5.jpg", price: 12300, id: 22 }
 ];
+
+
+
 var searchList = []
 //search js starts here
 // const list = document.getElementById('list');

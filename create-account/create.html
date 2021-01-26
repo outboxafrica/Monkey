@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="shortcut icon" type="image/png" href="../images/logo.png">
 </head>
 <body id="login-page">
     <main class="container-fluid container">
@@ -15,21 +16,25 @@
         </header>
         <form action="" method="GET">
             <div class="login" id="name">
-                <label for="">
-                    <input type="text" name="" id="" placeholder="Name" required>
+                <label for=""><span class="label-header">Username</span>
+                    <input type="text" name="username" id="username" placeholder="Tyler-ty" required>
                 </label>
             </div>
             <div class="login" id="email">
-                <label for="">
-                    <input type="email" name="" id="" placeholder="Mobile number or Email" required>
+                <label for=""><span class="label-header">Email</span>
+                    <input type="email" name="email" id="" placeholder="tyler25@tim.com" required>
                 </label>
             </div>
             <div class="login" id="password">
-                <label for="">
-                    <input type="password" name="" id="" placeholder="Password" required>
+                <label for=""><span class="label-header">Password</span>
+                    <input type="password" name="password" id="" placeholder="Password" required>
                 </label>
             </div>
-    
+            <div class="login" id="password">
+                <label for=""><span class="label-header">Password Confirmation</span>
+                    <input type="password" name="password" id="" placeholder="Password Confirmation" required>
+                </label>
+            </div>
         </form>
         <div  class="log-in create">
             <button   class="btn btn-block btn-primary"><a href="../productspage/products.html">Create account</a></button>

@@ -184,7 +184,6 @@ var cart = []; // array of selected items to be bought
 // This will popullate both products and cart lists in our page
 
 var popullateContainerWithItems = function popullateContainerWithItems(containerId, itemList) {
-
   var isSearching = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   // console.log('setting', itemList, 'to', containerId)
   var list = document.createElement('ul'); //create ul element to hold product list
@@ -270,4 +269,18 @@ var removeFromCart = function removeFromCart(e) {
   alert('Item successfully removed');
 };
 
-popullateContainerWithItems('products', productList);
+popullateContainerWithItems('products', productList); // form validation for the index or login page
+
+var form = document.getElementById('login-form');
+var emailNumber = form.getElementsByClassName.namedItem('emailNumber');
+var password = form.getElementsByClassName.namedItem('password');
+password.addEventListener('input', validate);
+form.addEventListener('submit', function (e) {
+  e.preventDefault;
+});
+
+function validate(e) {
+  var target = e.target;
+
+  if (target.name == "password") {}
+}
